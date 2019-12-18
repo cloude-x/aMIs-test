@@ -1,0 +1,10 @@
+{
+    "type": "page",
+    "title": "Title",
+    "subTitle": "SubTitle",
+    "remark": "Remark",
+    "aside": "Aside",
+    "body": "时间: ${date | date}",
+    "toolbar": "Toolbar",
+    "initApi": ""
+}
