@@ -15,6 +15,10 @@ const MAP = {
 }
 
 export default class Home extends Component {
+    state = {
+        currentIndex: 1,
+    }
+
     componentDidMount() {
         console.log(this.props)
     //     axios.get('https://api.binstd.com/news/get?channel=头条&start=0&num=10&appkey=ac7c59d349609c6c')
@@ -45,15 +49,31 @@ export default class Home extends Component {
 
     /* 获取页面ID */
     get pageId () {
-        return String(this.props.match.params.id)
+        return 1
+        // return String(this.props.match.params.id)
+    }
+
+    handleChangeTmp = (index) => {
+        this.setState({
+            currentIndex: Number(index),
+        })
     }
 
     render() {
+        const {
+            currentIndex,
+        } = this.state;
+
         return(
             <div>
-                <p>home pageId:{this.pageId}</p>
+                <p>home pageId:{currentIndex}</p>
                 {
-                    renderAmis(MAP[this.pageId])
+                    Object.keys(MAP).map((item, index) => {
+                        return <button onClick={() => this.handleChangeTmp(item)}>点击更换板式{item}</button>
+                    })
+                }
+                {
+                    renderAmis(MAP[currentIndex])
                 }
             </div>
         )
