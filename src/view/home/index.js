@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { render as renderAmis } from 'amis';
 
 import crud from './mock/crud.json';
@@ -20,30 +20,31 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-    //     axios.get('https://api.binstd.com/news/get?channel=头条&start=0&num=10&appkey=ac7c59d349609c6c')
-    //     .then(res => {
-    //         console.log('------', res)
-    //     })
-    //     .catch(err => {
-    //         console.log('+++++++', err)
-    //     })
-    //     axios({
-    //         method:'post',
-    //         url:'https://api.binstd.com/news/get',
-    //         data: {
-    //             channel: "头条",
-    //             start: 0,
-    //             num: 10,
-    //             appkey: 'ac7c59d349609c6c',
-    //         },
-    //         responseType:'json',
-    //       })
-    //         .then(function(response) {
-    //             console.log(1111, response)
-    //       })
-    //       .catch(e => {
-    //           console.log(22222, e)
-    //       })
+        // axios.get('https://apis.juhe.cn/simpleWeather/query?city=%E4%B8%8A%E6%B5%B7&key=10ac1519bdbe166bcd8bbcc7ab85be99')
+        // .then(res => {
+        //     console.log('------', res)
+        // })
+        // .catch(err => {
+        //     console.log('+++++++', err)
+        // })
+        // axios({
+        //     url: 'https://apis.juhe.cn/simpleWeather/query',
+        //     method: 'post',
+        //     data: {
+        //         city: "上海",
+        //         key: '10ac1519bdbe166bcd8bbcc7ab85be99',
+        //     },
+        //     header: {
+        //       'content-type': 'application/json' // 默认值
+        //     },
+        //     withCredentials: true,
+        //   })
+        //     .then(function(response) {
+        //         console.log(1111, response)
+        //   })
+        //   .catch(e => {
+        //       console.log(22222, e)
+        //   })
     }
 
     /* 获取页面ID */
