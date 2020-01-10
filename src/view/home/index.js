@@ -17,16 +17,38 @@ const MAP = {
 export default class Home extends Component {
     state = {
         currentIndex: this.paramId || 0,
+        axiosResponse: '',
+        aMisData: null,
     }
 
     componentDidMount() {
-        // axios.get('https://apis.juhe.cn/simpleWeather/query?city=%E4%B8%8A%E6%B5%B7&key=10ac1519bdbe166bcd8bbcc7ab85be99')
-        // .then(res => {
-        //     console.log('------', res)
-        // })
-        // .catch(err => {
-        //     console.log('+++++++', err)
-        // })
+        // const url = `${window.location.protocol}//${window.location.hostname}:8069/amis/testmsg/get`;
+        const url = `${window.location.protocol}//${window.location.hostname}:3001/aMis/test/get`;
+        // const url = `${window.location.protocol}//${window.location.hostname}:3001/aMis/test/2/100`;
+        console.log('api url', url);
+
+        let axiosResponse = this.state.axiosResponse;
+        this.setState({
+            axiosResponse: axiosResponse += url
+        })
+        axios.get(url)
+        // axios.get('http://10.21.23.130:8069/amis/testmsg/get')
+        .then(res => {
+            console.log('------', res)
+            let axiosResponse = this.state.axiosResponse;
+            this.setState({
+                axiosResponse: axiosResponse += `   ----res---, ${JSON.stringify(res)}`,
+                aMisData: res.data,
+                currentIndex: 0,
+            })
+        })
+        .catch(err => {
+            console.log('+++++++', err)
+            let axiosResponse = this.state.axiosResponse;
+            this.setState({
+                axiosResponse: axiosResponse += `   +++error++++, ${JSON.stringify(err)}`,
+            })
+        })
         // axios({
         //     url: 'https://apis.juhe.cn/simpleWeather/query',
         //     method: 'post',
@@ -87,12 +109,14 @@ export default class Home extends Component {
         const {
             state: {
                 currentIndex,
+                axiosResponse,
+                aMisData,
             },
         } = this;
 
-        if (!currentIndex) {
-            return <h1>缺少URL参数paramId或者paramId不能为0</h1>;
-        }
+        // if (!currentIndex) {
+        //     return <h1>缺少URL参数paramId或者paramId不能为0</h1>;
+        // }
 
         return(
             <div>
@@ -103,8 +127,13 @@ export default class Home extends Component {
                     })
                 }
                 {
+                    (aMisData && currentIndex === 0)
+                    ?
+                    renderAmis(aMisData)
+                    :
                     renderAmis(MAP[currentIndex])
                 }
+                <div style={{width: "300px", height: "300px"}}>{axiosResponse}</div>
             </div>
         )
     }
