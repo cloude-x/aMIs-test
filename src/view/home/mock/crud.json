@@ -1,11 +1,12 @@
 {
     "$schema": "http://amis.baidu.com/v2/schemas/page.json#",
     "title": "增删改查示例",
-    "remark": "bla bla bla",
+    "remark": "增删改查示例",
     "toolbar": [
         {
             "type": "button",
-            "actionType": "dialog",
+            "actionType": "ajax",
+            "api": "/amis/testmsg/get",
             "label": "新增",
             "icon": "fa fa-plus pull-left",
             "primary": true,
@@ -64,7 +65,9 @@
     "body": {
         "type": "crud",
         "draggable": true,
-        "api": "",
+        "api": "/amis/testmsg/get",
+        "page": 20,
+        "pageField": "pn",
         "keepItemSelectionOnPageChange": true,
         "labelTpl": "${id} ${engine}",
         "filter": {
