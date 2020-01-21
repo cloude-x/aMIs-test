@@ -39,7 +39,7 @@ export default class Home extends Component {
 
     async componentDidMount() {
         /* 获取aMis josn配置数据 */
-        // await this.getAMisData();
+        await this.getAMisData();
 
         /* 获取odoo员工列表 */
         // this.getEmployeeList();
@@ -542,32 +542,75 @@ export default class Home extends Component {
         //     return <h1>缺少URL参数paramId或者paramId不能为0</h1>;
         // }
 
-        return(
-            <div>
-                {/* <p>home pageId:{currentIndex}</p> */}
-                {/* {
-                    Object.keys(MAP).map((item, index) => {
-                        return <button key={index} onClick={() => this.handleChangeTmp(item)}>点击更换板式{item}</button>
-                    })
-                } */}
-                {/* <button onClick={() => this.addEmployee('13111111117')}>点击新增用户</button>
-                <button onClick={() => this.changeEmployeeInfo({name: '徐晃04', workPhone: '13111111123'})}>点击更改用户信息</button>
-                <button onClick={() => this.removeEmployee(42179)}>点击删除用户</button> */}
 
-                {
-                    (aMisData && currentIndex === 0)
-                    ?
-                    renderAmis(aMisData)
-                    :
-                    renderAmis(MAP[currentIndex || 1], {}, {
-                        fetcher: fetcher,
-                    })
-                }
-                {/* {
-                    axiosResponse &&
-                    <div style={{width: "100%", height: "300px"}}>{axiosResponse}</div>
-                } */}
-            </div>
-        )
+        if (aMisData && currentIndex === 0) {
+            return renderAmis(aMisData, {}, {
+                fetcher: fetcher,
+            })
+        } else {
+            return null;
+        }
+        // return(
+        //     <div>
+        //         {/* <p>home pageId:{currentIndex}</p> */}
+        //         {/* {
+        //             Object.keys(MAP).map((item, index) => {
+        //                 return <button key={index} onClick={() => this.handleChangeTmp(item)}>点击更换板式{item}</button>
+        //             })
+        //         } */}
+        //         {/* <button onClick={() => this.addEmployee('13111111117')}>点击新增用户</button>
+        //         <button onClick={() => this.changeEmployeeInfo({name: '徐晃04', workPhone: '13111111123'})}>点击更改用户信息</button>
+        //         <button onClick={() => this.removeEmployee(42179)}>点击删除用户</button> */}
+
+        //         {
+        //             (aMisData && currentIndex === 0)
+        //             ?
+        //             renderAmis(aMisData)
+        //             :
+        //             renderAmis(MAP[currentIndex || 1], {}, {
+        //                 fetcher: fetcher,
+        //             })
+        //         }
+        //         {/* {
+        //             axiosResponse &&
+        //             <div style={{width: "100%", height: "300px"}}>{axiosResponse}</div>
+        //         } */}
+        //     </div>
+        // )
     }
 }
+
+
+// "context": {
+//     "lang": "zh_CN",
+//     "tz": "Asia/Shanghai",
+//     "uid": 1,
+//     "params": {
+//         "action": "7a1d1ea5-46c6-41d9-8588-faf064bb5692",
+//         "page": 0,
+//         "limit": 20,
+//         "view_type": "list",
+//         "model": "hr.employee",
+//         "_push_me": false
+//     },
+//     "form_view_ref": "hr_base.view_employee_form",
+//     "tree_view_ref": "hr_base.view_employee_tree",
+//     "search_view_ref": "hr_base.view_employee_filter",
+//     "readonly_bypass": ["inner_working_age", "social_working_age", "employee_number", "current_tax_month"],
+//     "search_default_employee_active": 1,
+//     "all_employee": 1,
+//     "_search_order_by": "employee_number",
+//     "bin_size": true
+// },
+// "identication": {
+//     "info": {
+//         "systemModel": "PC",
+//         "systemVersion": "9.1"
+//     },
+//     "language": "zh_CN",
+//     "linkid": "f83ad7bbcbf145a3902c90bbd6751949",
+//     "session_id": "239416e0c17bcf3ebc3e329eea915060094bd7bb",
+//     "version": "2.4.0",
+//     "app_channel": "wx",
+//     "type": "session"
+// },

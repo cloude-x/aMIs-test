@@ -1,0 +1,38 @@
+{
+  "files": {
+    "static/js/0.07976291.chunk.js": "/static/js/0.07976291.chunk.js",
+    "static/js/0.07976291.chunk.js.map": "/static/js/0.07976291.chunk.js.map",
+    "main.css": "/static/css/main.ff601074.chunk.css",
+    "main.js": "/static/js/main.1230e576.chunk.js",
+    "main.js.map": "/static/js/main.1230e576.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5fdd0e8d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5fdd0e8d.js.map",
+    "static/css/3.a2806b49.chunk.css": "/static/css/3.a2806b49.chunk.css",
+    "static/js/3.cca39d36.chunk.js": "/static/js/3.cca39d36.chunk.js",
+    "static/js/3.cca39d36.chunk.js.map": "/static/js/3.cca39d36.chunk.js.map",
+    "static/js/4.1fce3b08.chunk.js": "/static/js/4.1fce3b08.chunk.js",
+    "static/js/4.1fce3b08.chunk.js.map": "/static/js/4.1fce3b08.chunk.js.map",
+    "static/js/5.452bcc54.chunk.js": "/static/js/5.452bcc54.chunk.js",
+    "static/js/5.452bcc54.chunk.js.map": "/static/js/5.452bcc54.chunk.js.map",
+    "static/js/6.ac12a37a.chunk.js": "/static/js/6.ac12a37a.chunk.js",
+    "static/js/6.ac12a37a.chunk.js.map": "/static/js/6.ac12a37a.chunk.js.map",
+    "static/js/7.4e356e20.chunk.js": "/static/js/7.4e356e20.chunk.js",
+    "static/js/7.4e356e20.chunk.js.map": "/static/js/7.4e356e20.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.86e7aa8557476c57ca37417af2877d79.js": "/precache-manifest.86e7aa8557476c57ca37417af2877d79.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/3.a2806b49.chunk.css.map": "/static/css/3.a2806b49.chunk.css.map",
+    "static/css/main.ff601074.chunk.css.map": "/static/css/main.ff601074.chunk.css.map",
+    "static/js/3.cca39d36.chunk.js.LICENSE": "/static/js/3.cca39d36.chunk.js.LICENSE",
+    "static/js/5.452bcc54.chunk.js.LICENSE": "/static/js/5.452bcc54.chunk.js.LICENSE",
+    "static/js/6.ac12a37a.chunk.js.LICENSE": "/static/js/6.ac12a37a.chunk.js.LICENSE",
+    "static/js/7.4e356e20.chunk.js.LICENSE": "/static/js/7.4e356e20.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5fdd0e8d.js",
+    "static/css/3.a2806b49.chunk.css",
+    "static/js/3.cca39d36.chunk.js",
+    "static/css/main.ff601074.chunk.css",
+    "static/js/main.1230e576.chunk.js"
+  ]
+}

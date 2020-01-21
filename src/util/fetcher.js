@@ -17,7 +17,7 @@ export default ({
     url,
     method,
     data,
-    config
+    config,
 } = {}, formatFunc = null) => {
     config = config || {};
     config.headers = config.headers || {};
@@ -39,30 +39,17 @@ export default ({
         delete data.filterValue;
     }
 
-    /*
-    if (process.env.NODE_ENV === "production") {
-        "context": {
-            "lang": "zh_CN",
-            "tz": "Asia/Shanghai",
-            "uid": 1,
-            "params": {
-                "action": "7a1d1ea5-46c6-41d9-8588-faf064bb5692",
-                "page": 0,
-                "limit": 20,
-                "view_type": "list",
-                "model": "hr.employee",
-                "_push_me": false,
-            },
-            "form_view_ref": "hr_base.view_employee_form",
-            "tree_view_ref": "hr_base.view_employee_tree",
-            "search_view_ref": "hr_base.view_employee_filter",
-            "readonly_bypass": ["inner_working_age", "social_working_age", "employee_number", "current_tax_month"],
-            "search_default_employee_active": 1,
-            "all_employee": 1,
-            "_search_order_by": "employee_number",
-            "bin_size": true
-        }
-    }*/
+    // if (process.env.NODE_ENV === "production") {
+    //     if (data?.data?.context) {
+    //         data.context = data?.data?.context;
+    //         delete data.data.context;
+    //     }
+    // } else {
+    //     if (data?.data?.identication) {
+    //         data.identication = data?.data?.identication;
+    //         delete data.data.identication;
+    //     }
+    // }
 
     console.log(900000009, {url: url, method: method, data: data, config: config})
     if (method !== 'post' && method !== 'put' && method !== 'patch') {
@@ -76,6 +63,8 @@ export default ({
         }
 
         renderType = data?.renderType || '';
+        data.params = data.data;
+        delete data.data;
     } else if (data && data instanceof FormData) {
         // config.headers = config.headers || {};
         // config.headers['Content-Type'] = 'multipart/form-data';
@@ -88,6 +77,8 @@ export default ({
         if (data?.data?.args && typeof data.data.args[0] === 'string') {
             data.data.args[0] = JSON.parse(data?.data?.args[0])
         }
+        data.params = data.data;
+        delete data.data;
         data = JSON.stringify(data);
         config.headers['Content-Type'] = 'application/json';
     }
@@ -98,13 +89,13 @@ export default ({
         let payload = {
             status: res?.status === 200 ? 0 : res?.status,
             msg: res?.statusText,
-            data: res?.data?.data || {},
+            data: res?.data?.result || {},
         };
 
         /* 确定数据返回类型，指定接口data传值 */
         /* 增删改查 */
         if (renderType && renderType === 'crud') {
-            const data = res?.data?.data;
+            const data = res?.data?.result;
             const records = data?.records;
             
             payload.data = {

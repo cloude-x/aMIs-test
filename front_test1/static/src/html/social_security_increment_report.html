@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>security</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE;IE=edge;chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/social_security/static/src/html/social_security_increment_report.css">
+    <link rel="stylesheet" type="text/css" href="/social_security/static/src/html/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="/web/static/lib/select2-bootstrap-css/select2-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/web/static/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/web/static/lib/fontawesome/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="body">
+        <div class="div-header">
+            <span class="div-header-title" data-locale="SI_Employee_Change_Report"></span>
+            <div class="div-header-row">
+                <div class="div-header-row-start">
+                    <span class="div-header-row-start-title" data-locale="From_To"></span>
+                    <div class="input-append date datePicker-start">
+                        <input type="text" class="input-datepicker" id="input-date-start">
+                        <span class="add-on">
+                            <i class="icon-th"></i>
+                        </span>
+                    </div>
+                    <span class="div-header-row-start-to">～</span>
+                    <div class="input-append date datePicker-end">
+                        <input type="text" class="input-datepicker" id="input-date-end">
+                        <span class="add-on">
+                            <i class="icon-th"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="div-header-row-end">
+                    <button class=" div-header-row-end-query active" id="btn-query" type="button" data-locale="Search"></button>
+                    <button class=" div-header-row-end-export" id="btn-export" type="button" data-locale="Download"></button>
+                </div>
+
+            </div>
+            <div class="div_common_row">
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Social_security_status"></span>
+                    <select class="common_select" name="social_security_state" id="social_security_state"></select>
+                </div>
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Employment_forms"></span>
+                    <select class="common_select" name="employment_form" id="employment_form"></select>
+                </div>
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Employee_attribution_category"></span>
+                    <select class="common_select" name="employee_child_group" id="employee_child_group"></select>
+                </div>
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Post"></span>
+                    <input class="common_input1" id="job_id"></input>
+                </div>
+            </div>
+            <div class="div_common_row">
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Social_security_payment_month"></span>
+                    <div class="common_input date datePicker_social_start">
+                        <input type="text" class="input-datepicker" id="input_date_social_start">
+                            <span class="add-on">
+                                <i class="icon-th"></i>
+                            </span>
+                    </div>
+                </div>
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Social_security_suspension_month"></span>
+                    <div class="common_input date datePicker_social_end">
+                        <input type="text" class="input-datepicker" id="input_date_social_end">
+                            <span class="add-on">
+                                <i class="icon-th"></i>
+                            </span>
+                    </div>
+                </div>
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Provident_fund_from_the_month"></span>
+                    <div class="common_input date datePicker_provident_start">
+                        <input type="text" class="input-datepicker" id="input_date_provident_start">
+                            <span class="add-on">
+                                <i class="icon-th"></i>
+                            </span>
+                    </div>
+                </div>
+                <div class="div_common_row_item">
+                    <span class="common_text" data-locale="Provident_fund_stop_payment_month"></span>
+                    <div class="common_input date datePicker_provident_end">
+                        <input type="text" class="input-datepicker" id="input_date_provident_end">
+                            <span class="add-on">
+                                <i class="icon-th"></i>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-content">
+            <div class="div-content-tab">
+                <div class="div-content-tab half-width">
+                    <button class="div-content-tab-button selected" id="social-security-increase" data-locale="SI_Add_Employee"></button>
+                    <button class="div-content-tab-button unselected" id="social-security-decrease" data-locale="SI_Reduce_Employee"></button>
+                    <button class="div-content-tab-button unselected" id="social-security-change" data-locale="SI_Change_Employee"></button>
+                </div>
+                <div class="div-content-limit half-width">
+                    <span class="div-content-limit-value"></span>
+                    <div id="pages-button" class="div-content-limit-group" s>
+                        <a class="fa fa-chevron-left btn btn-default btn-previous  oe-pager-button" t-att="att_prev" type="button" data-pager-action="previous"></a>
+                        <a class="fa fa-chevron-right btn btn-default btn-next oe-pager-button" t-att="att_next" type="button" data-pager-action="next"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper"></div>
+        </div>
+
+        <script src="/web/static/lib/jquery/jquery.js" type="text/javascript"></script>
+        <script type="text/JavaScript" src="/social_security/static/src/html/js/jquery.i18n.properties-min-1.0.9.js"></script>
+        <script type="text/javascript" src="/social_security/static/src/html/js/jquery.floatThead.min.js"></script>
+        <script type="text/javascript" src="/social_security/static/src/html/js/alert.min.js"></script>
+        <script type="text/javascript" src="/social_security/static/src/html/js/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript" src="/social_security/static/src/html/js/locales/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+        <script type="text/javascript" src="/social_security/static/src/html/social_security_increment_report.js"></script>
+</body>
+
+</html>

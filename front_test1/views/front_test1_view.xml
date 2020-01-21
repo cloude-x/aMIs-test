@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.actions.client" id="action_variation_view">
+            <field name="name">BD Front View</field>
+            <field name="tag">tag.action.page_front_test1</field>
+        </record>
+        <menuitem id="menu_bd_front_view" parent="payroll_base_info.menu_payroll_archive_management"
+                  name="BD Front View" action="action_variation_view"
+                  sequence="40" web_icon="iconfont,icon-si_emp_change_report"/>
+
+        <template id="assets_backend" name="bd front view asset" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/front_test1/static/src/js/front_test1_view.js"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
