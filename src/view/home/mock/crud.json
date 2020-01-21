@@ -5,8 +5,7 @@
     "toolbar": [
         {
             "type": "button",
-            "actionType": "ajax",
-            "api": "/amis/testmsg/get",
+            "actionType": "dialog",
             "label": "新增",
             "icon": "fa fa-plus pull-left",
             "primary": true,
@@ -15,47 +14,287 @@
                 "body": {
                     "type": "form",
                     "name": "sample-edit-form",
-                    "api": "",
+                    "api": {
+                        "method": "post",
+                        "url": "/web/dataset/call_kw/hr.employee/create",
+                        "data": {
+                            "jsonrpc": "2.0",
+                            "method": "call",
+                            "data": {
+                                "model": "hr.employee",
+                                "method": "create",
+                                "args": [{
+                                    "image": false,
+                                    "image_name": false,
+                                    "name": "${name}",
+                                    "company_id": 1,
+                                    "legal_entity": false,
+                                    "department_id": 3174,
+                                    "x_department_type": false,
+                                    "cost_center": 200,
+                                    "job_id": 5733,
+                                    "is_leaving_post": false,
+                                    "parent_id": 2683,
+                                    "group_parent_id": false,
+                                    "project_parent_id": false,
+                                    "line_parent_id": false,
+                                    "x_hrbp": false,
+                                    "mentor_id": false,
+                                    "mobile_phone": false,
+                                    "x_oldstaffno": false,
+                                    "is_concurrent_post": false,
+                                    "org_unit_effective_time": false,
+                                    "job_effective_time": false,
+                                    "pinyin": false,
+                                    "first_name": false,
+                                    "last_name": false,
+                                    "work_phone": "${workPhone}",
+                                    "work_email": false,
+                                    "personal_mobile": false,
+                                    "telephone": false,
+                                    "work_place": false,
+                                    "cinema": false,
+                                    "location_id": 9,
+                                    "office_new": false,
+                                    "office": false,
+                                    "function_id": false,
+                                    "hrbp_id": false,
+                                    "hiredate": "2020-01-14",
+                                    "group_hire_date": false,
+                                    "social_work_start_date": false,
+                                    "x_annual_leave_start": false,
+                                    "social_working_age_adjustment": 0,
+                                    "company_working_age_adjustment": 0,
+                                    "active": true,
+                                    "activated": false,
+                                    "x_original_unit": false,
+                                    "recruitment_channel": false,
+                                    "recruitment_source": false,
+                                    "employee_grade_id": false,
+                                    "employee_now_rank": false,
+                                    "employee_type_rep": 1,
+                                    "x_renyuanleixing": false,
+                                    "parttime_employee_category": false,
+                                    "employment_form": false,
+                                    "employee_group_rep": false,
+                                    "employee_child_group": false,
+                                    "category_ids": [],
+                                    "developing_direction": false,
+                                    "is_probation": false,
+                                    "probation_date": false,
+                                    "departure_time": false,
+                                    "is_probation_work": false,
+                                    "probation_days": 0,
+                                    "probation_state": "untreated",
+                                    "probation_end_date": false,
+                                    "country_id": 49,
+                                    "id_type": 2,
+                                    "identification_id": "12345762312526",
+                                    "id_address": false,
+                                    "id_duedate": false,
+                                    "id_duestartdate": false,
+                                    "issued_by": false,
+                                    "issued_at": false,
+                                    "home_address": false,
+                                    "home_zip": false,
+                                    "residence_permit": false,
+                                    "native_place": false,
+                                    "birth_place": false,
+                                    "registered_permanent_residence": false,
+                                    "x_baby_gift": false,
+                                    "x_baby_gift_times": 0,
+                                    "x_marriage_gift": false,
+                                    "x_marriage_gift_times": 0,
+                                    "medical_history": false,
+                                    "blood_type": false,
+                                    "permanent_residence": false,
+                                    "zodiac": false,
+                                    "interest": false,
+                                    "reserved_field_1": false,
+                                    "reserved_field_2": false,
+                                    "reserved_field_3": false,
+                                    "reserved_field_4": false,
+                                    "reserved_field_5": false,
+                                    "reserved_field_6": false,
+                                    "reserved_field_7": false,
+                                    "reserved_field_8": false,
+                                    "reserved_field_9": false,
+                                    "reserved_field_10": false,
+                                    "gender": "male",
+                                    "nation_id": false,
+                                    "birthday": "2020-01-13",
+                                    "personal_email": false,
+                                    "x_qq": false,
+                                    "x_weibo": false,
+                                    "home_phone": false,
+                                    "archive_address": false,
+                                    "health_status": false,
+                                    "marital": false,
+                                    "children": 0,
+                                    "x_child_name1": false,
+                                    "x_child_gender1": false,
+                                    "x_child_birthday1": false,
+                                    "x_child_name2": false,
+                                    "x_child_gender2": false,
+                                    "x_child_birthday2": false,
+                                    "political_id": false,
+                                    "party_time": false,
+                                    "x_health_condition": false,
+                                    "height": 0,
+                                    "weight": 0,
+                                    "bank_name": false,
+                                    "bank_account": false,
+                                    "bank_account_holder": false,
+                                    "bank_address1": false,
+                                    "bank_identification_number_type1": false,
+                                    "bank_identification_number1": false,
+                                    "bank_tag1": false,
+                                    "other_information1": false,
+                                    "bank_name2": false,
+                                    "bank_account2": false,
+                                    "bank_account_holder2": false,
+                                    "bank_address2": false,
+                                    "bank_identification_number_type2": false,
+                                    "bank_identification_number2": false,
+                                    "bank_tag2": false,
+                                    "other_information2": false,
+                                    "other_id_information": [],
+                                    "education_ids": [],
+                                    "worked_ids": [],
+                                    "contact_ids": [],
+                                    "title_ids": [],
+                                    "train_ids": [],
+                                    "rewards_and_punishments_ids": [],
+                                    "conflict_of_interest_company_name1": false,
+                                    "conflict_of_interest_company_job1": false,
+                                    "conflict_of_interest_company_stock1": false,
+                                    "conflict_of_interest_company_name3": false,
+                                    "conflict_of_interest_company_job3": false,
+                                    "conflict_of_interest_company_stock3": false,
+                                    "conflict_of_interest_company_name2": false,
+                                    "conflict_of_interest_company_job2": false,
+                                    "conflict_of_interest_company_stock2": false,
+                                    "external_part_time_company_name1": false,
+                                    "external_part_time_company_job1": false,
+                                    "external_part_time_company_time1": false,
+                                    "external_part_time_company_content1": false,
+                                    "external_part_time_company_name2": false,
+                                    "external_part_time_company_job2": false,
+                                    "external_part_time_company_time2": false,
+                                    "external_part_time_company_content2": false,
+                                    "relatives_equity_relationship1": false,
+                                    "family_owned_company1": false,
+                                    "relatives_equity_relationship_way1": false,
+                                    "relatives_equity_relationship_number1": false,
+                                    "relatives_equity_relationship2": false,
+                                    "family_owned_company2": false,
+                                    "relatives_equity_relationship_way2": false,
+                                    "relatives_equity_relationship_number2": false,
+                                    "concurrent_post_ids": [],
+                                    "replace_post_ids": [],
+                                    "working_hours": false,
+                                    "work_hours_rule_id": false,
+                                    "overtime_conf_id": false,
+                                    "holiday_package_id": false,
+                                    "attendance_area_id": false,
+                                    "positive_time": true,
+                                    "no_clock_in_outside": false,
+                                    "attendance_card_no": false,
+                                    "responsible_attendance_points": [],
+                                    "annual_base_salary": 0,
+                                    "sum_salary_adjustment": 0,
+                                    "probation_salary": 0,
+                                    "annual_bonus_base": 0,
+                                    "x_annual_bonus_base_aft_tax": 0,
+                                    "merit_pay_rate": 0,
+                                    "daily_salary": 0,
+                                    "x_interpolate_bonus": 0,
+                                    "faxinggongshi_can_change": true,
+                                    "recruitment_offer_note": false,
+                                    "payroll_archive_ids": [],
+                                    "payroll_group_employee_ids": [],
+                                    "register_type": false,
+                                    "domicile_place": false,
+                                    "annual_bouns_taxation": false,
+                                    "pay_tax_city": false,
+                                    "x_tax_academic_education": 0,
+                                    "x_tax_caring_elderly": 0,
+                                    "x_tax_children_education": 0,
+                                    "x_tax_housing_loan_interest": 0,
+                                    "x_tax_housing_rental": 0,
+                                    "x_clearcumtax": false,
+                                    "x_tax_month": false,
+                                    "social_security_company_id": false,
+                                    "taxpayer_type": false,
+                                    "pay_tax_id_type": false,
+                                    "pay_tax_id_number": false,
+                                    "tax_registry_code": false,
+                                    "social_security_account": false,
+                                    "social_security_province": false,
+                                    "social_security_city": false,
+                                    "social_security_town": false,
+                                    "social_security_id": false,
+                                    "social_security_base": 0,
+                                    "social_security_base_company": 0,
+                                    "social_security_start_month": false,
+                                    "social_security_end_month": false,
+                                    "social_security_state": false,
+                                    "housing_fund_account": false,
+                                    "housing_fund_province": false,
+                                    "housing_fund_city": false,
+                                    "housing_fund_town": false,
+                                    "housing_fund_id": false,
+                                    "housing_fund_base": 0,
+                                    "housing_fund_base_company": 0,
+                                    "housing_fund_start_month": false,
+                                    "housing_fund_end_month": false,
+                                    "social_security_special_deduction_id": [],
+                                    "withhold_agent": false,
+                                    "sffjm": false,
+                                    "is_foreign": false,
+                                    "tax_related_causes": "employed",
+                                    "first_entry_time": false,
+                                    "is_disabled": false,
+                                    "disability_certificate_no": false,
+                                    "is_martyrs": false,
+                                    "martyrs_certificate_no": false,
+                                    "is_solitary": false,
+                                    "pre_departure_time": false,
+                                    "cost_center_ids": [[4, 23702, false]],
+                                    "disability_type": false,
+                                    "disability_grade": false,
+                                    "is_inductrial": false,
+                                    "disability_info": false,
+                                    "labor_union": false,
+                                    "labor_union_job": false,
+                                    "qywx_account": false,
+                                    "qywx_islink": false,
+                                    "qywx_issyn": true,
+                                    "qywx_syn_state": "nosyn",
+                                    "relation_ids": [],
+                                    "relation_type_ids": [],
+                                    "virtual_department_ids": []
+                                }],
+                                "kwargs": {}
+                            },
+                            "id": 979327148
+                        }
+                    },
                     "controls": [
                         {
                             "type": "text",
-                            "name": "engine",
-                            "label": "Engine",
+                            "name": "name",
+                            "label": "姓名",
+                            "required": false
+                        },
+                        {
+                            "type": "divider"
+                        },
+                        {
+                            "type": "text",
+                            "name": "workPhone",
+                            "label": "手机号",
                             "required": true
-                        },
-                        {
-                            "type": "divider"
-                        },
-                        {
-                            "type": "text",
-                            "name": "browser",
-                            "label": "Browser",
-                            "required": true
-                        },
-                        {
-                            "type": "divider"
-                        },
-                        {
-                            "type": "text",
-                            "name": "platform",
-                            "label": "Platform(s)",
-                            "required": true
-                        },
-                        {
-                            "type": "divider"
-                        },
-                        {
-                            "type": "text",
-                            "name": "version",
-                            "label": "Engine version"
-                        },
-                        {
-                            "type": "divider"
-                        },
-                        {
-                            "type": "text",
-                            "name": "grade",
-                            "label": "CSS grade"
                         }
                     ]
                 }
@@ -65,27 +304,105 @@
     "body": {
         "type": "crud",
         "draggable": true,
-        "api": "/amis/testmsg/get",
-        "page": 20,
-        "pageField": "pn",
+        "api": {
+            "page": 1,
+            "perPage": 20,
+            "url": "/web/dataset/search_read",
+            "method": "post",
+            "data": {
+                "&": "$$",
+                "renderType": "crud",
+                "jsonrpc": "2.0",
+                "method": "call",
+                "data": {
+                    "model": "hr.employee",
+                    "fields": [
+                        "employee_number",
+                        "name",
+                        "department_id",
+                        "job_id",
+                        "parent_id",
+                        "dep_manager",
+                        "employee_child_group",
+                        "work_phone",
+                        "hiredate",
+                        "employee_now_rank",
+                        "employee_type_rep",
+                        "work_activity",
+                        "id_type",
+                        "identification_id",
+                        "birthday",
+                        "gender",
+                        "age",
+                        "country_id",
+                        "cost_center",
+                        "employee_group_rep",
+                        "legal_entity",
+                        "location_id",
+                        "work_email",
+                        "registered_permanent_residence",
+                        "home_address",
+                        "qywx_account",
+                        "departure_time",
+                        "probation_date",
+                        "payroll_group_employee_ids",
+                        "bank_account",
+                        "is_probation",
+                        "contract_id",
+                        "x_belongteam",
+                        "date_end",
+                        "date_start",
+                        "x_renyuanleixing",
+                        "employment_form",
+                        "parttime_employee_category",
+                        "positive_time",
+                        "highest_education",
+                        "x_department_iddepartment_id_2",
+                        "x_department_iddepartment_id_3",
+                        "x_department_id_4",
+                        "x_department_id_3",
+                        "overtime_conf_id",
+                        "attendance_area_id",
+                        "holiday_package_id",
+                        "qywx_syn_state",
+                        "company_id"
+                    ],
+                    "domain": [],
+                    "offset": "${page}",
+                    "limit": "${perPage}",
+                    "sort": ""
+                },
+                "id": 385038514
+            }
+        },
         "keepItemSelectionOnPageChange": true,
-        "labelTpl": "${id} ${engine}",
+        "labelTpl": "${id} ${name}",
         "filter": {
             "title": "条件搜索",
             "submitText": "",
             "controls": [
                 {
+                    "type": "select",
+                    "name": "filterCondition",
+                    "options": [
+                        {
+                            "label": "员工姓名",
+                            "value": "name"
+                        },
+                        {
+                            "label": "员工编号",
+                            "value": "employee_number"
+                        }
+                    ],
+                    "value": "name"
+                },
+                {
                     "type": "text",
-                    "name": "keywords",
-                    "placeholder": "通过关键字搜索",
+                    "name": "filterValue",
                     "addOn": {
                         "label": "搜索",
                         "type": "submit"
                     }
-                },
-                {
-                    "type": "plain",
-                    "text": "这里的表单项可以配置多个"
                 }
             ]
         },
@@ -128,7 +445,7 @@
             "bulkActions",
             {
                 "type": "tpl",
-                "tpl": "定制内容示例：当前有 ${count} 条数据。",
+                "tpl": "定制内容示例：当前有 ${count} 条数据，总共有 ${total} 条数据",
                 "className": "v-middle"
             },
             {
@@ -158,32 +475,31 @@
         ],
         "columns": [
             {
-                "name": "id",
-                "label": "ID",
-                "width": 20,
+                "name": "employee_number",
+                "label": "员工编号",
                 "sortable": true,
                 "type": "text",
                 "toggled": true,
                 "remark": "Bla bla Bla"
             },
             {
-                "name": "engine",
-                "label": "Rendering engine",
+                "name": "name",
+                "label": "员工姓名",
                 "sortable": true,
                 "searchable": true,
                 "type": "text",
                 "toggled": true
             },
             {
-                "name": "browser",
-                "label": "Browser",
+                "name": "department_id",
+                "label": "组织单元",
                 "sortable": true,
                 "type": "text",
-                "toggled": false
+                "toggled": true
             },
             {
-                "name": "platform",
-                "label": "Platform(s)",
+                "name": "job_id",
+                "label": "岗位",
                 "popOver": {
                     "body": {
                         "type": "tpl",
@@ -198,8 +514,8 @@
                 "toggled": true
             },
             {
-                "name": "version",
-                "label": "Engine version",
+                "name": "parent_id",
+                "label": "汇报上级",
                 "quickEdit": true,
                 "type": "text",
                 "toggled": true,
@@ -221,8 +537,8 @@
                 }
             },
             {
-                "name": "grade",
-                "label": "CSS grade",
+                "name": "dep_manager",
+                "label": "组织单元经理",
                 "quickEdit": {
                     "mode": "inline",
                     "type": "select",
@@ -256,40 +572,40 @@
                                 "controls": [
                                     {
                                         "type": "static",
-                                        "name": "engine",
-                                        "label": "Engine"
+                                        "name": "employee_number",
+                                        "label": "员工编号"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
                                         "type": "static",
-                                        "name": "browser",
-                                        "label": "Browser"
+                                        "name": "name",
+                                        "label": "员工姓名"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
                                         "type": "static",
-                                        "name": "platform",
-                                        "label": "Platform(s)"
+                                        "name": "department_id",
+                                        "label": "组织单元"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
                                         "type": "static",
-                                        "name": "version",
-                                        "label": "Engine version"
+                                        "name": "job_id",
+                                        "label": "岗位"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
                                         "type": "static",
-                                        "name": "grade",
-                                        "label": "CSS grade"
+                                        "name": "parent_id",
+                                        "label": "汇报上级"
                                     },
                                     {
                                         "type": "divider"
@@ -314,47 +630,64 @@
                             "body": {
                                 "type": "form",
                                 "name": "sample-edit-form",
-                                "api": "",
+                                "api": {
+                                    "method": "post",
+                                    "url": "/web/dataset/call_kw/hr.employee/write",
+                                    "data": {
+                                        "jsonrpc": "2.0",
+                                        "method": "call",
+                                        "data": {
+                                            "model": "hr.employee",
+                                            "method": "write",
+                                            "args": [
+                                                "[${id}]",
+                                                {
+                                                    "name": "${name}"
+                                                }
+                                            ],
+                                            "kwargs": {}
+                                        },
+                                        "id": 798428319
+                                    }
+                                },
                                 "controls": [
                                     {
-                                        "type": "text",
-                                        "name": "engine",
-                                        "label": "Engine",
-                                        "required": true
+                                        "type": "static",
+                                        "name": "employee_number",
+                                        "label": "员工编号"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
                                         "type": "text",
-                                        "name": "browser",
-                                        "label": "Browser",
+                                        "name": "name",
+                                        "label": "员工姓名",
                                         "required": true
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
-                                        "type": "text",
-                                        "name": "platform",
-                                        "label": "Platform(s)",
-                                        "required": true
+                                        "type": "static",
+                                        "name": "department_id",
+                                        "label": "组织单元"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
-                                        "type": "text",
-                                        "name": "version",
-                                        "label": "Engine version"
+                                        "type": "static",
+                                        "name": "job_id",
+                                        "label": "岗位"
                                     },
                                     {
                                         "type": "divider"
                                     },
                                     {
                                         "type": "select",
-                                        "name": "grade",
-                                        "label": "CSS grade",
+                                        "name": "parent_id",
+                                        "label": "汇报上级",
                                         "options": [
                                             "A",
                                             "B",
@@ -373,7 +706,23 @@
                         "actionType": "ajax",
                         "tooltip": "删除",
                         "confirmText": "您确认要删除?",
-                        "api": ""
+                        "api": {
+                            "method": "",
+                            "url": "/web/dataset/call_kw/hr.employee/unlink",
+                            "data": {
+                                "jsonrpc": "2.0",
+                                "method": "call",
+                                "data": {
+                                    "model": "hr.employee",
+                                    "method": "unlink",
+                                    "args": [
+                                        "[${id}]"
+                                    ],
+                                    "kwargs": {}
+                                },
+                                "id": 468289307
+                            }
+                        }
                     }
                 ],
                 "toggled": true

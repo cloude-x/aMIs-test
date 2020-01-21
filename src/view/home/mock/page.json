@@ -1,10 +1,16 @@
 {
     "type": "page",
+    "initApi": {
+        "url": "/amis/testmsg/get",
+        "method": "get",
+        "data": {
+            "234": "234"
+        }
+    },
     "title": "Title",
     "subTitle": "SubTitle",
     "remark": "Remark",
     "aside": "Aside",
-    "body": "时间: ${date | date}",
-    "toolbar": "Toolbar",
-    "initApi": ""
+    "body": "",
+    "toolbar": "Toolbar"
 }

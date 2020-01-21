@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { render as renderAmis } from 'amis';
 
+import fetcher from '@util/fetcher';
+
 import crud from './mock/crud.json';
 import page from './mock/page.json';
 import composing from './mock/composing.json';
@@ -29,7 +31,7 @@ export default class Home extends Component {
         },
         "language": "zh_CN",
         "linkid": "f83ad7bbcbf145a3902c90bbd6751949",
-        "session_id": "99ded36693dbb7504b395068aec9a58f0ea49824",
+        "session_id": "239416e0c17bcf3ebc3e329eea915060094bd7bb",
         "version": "2.4.0",
         "app_channel": "wx",
         "type": "session"
@@ -531,7 +533,7 @@ export default class Home extends Component {
         const {
             state: {
                 currentIndex,
-                axiosResponse,
+                // axiosResponse,
                 aMisData,
             },
         } = this;
@@ -542,15 +544,15 @@ export default class Home extends Component {
 
         return(
             <div>
-                <p>home pageId:{currentIndex}</p>
+                {/* <p>home pageId:{currentIndex}</p> */}
                 {/* {
                     Object.keys(MAP).map((item, index) => {
                         return <button key={index} onClick={() => this.handleChangeTmp(item)}>点击更换板式{item}</button>
                     })
                 } */}
-                <button onClick={() => this.addEmployee('13111111116')}>点击新增用户</button>
+                {/* <button onClick={() => this.addEmployee('13111111117')}>点击新增用户</button>
                 <button onClick={() => this.changeEmployeeInfo({name: '徐晃04', workPhone: '13111111123'})}>点击更改用户信息</button>
-                <button onClick={() => this.removeEmployee(42179)}>点击删除用户</button>
+                <button onClick={() => this.removeEmployee(42179)}>点击删除用户</button> */}
 
                 {
                     (aMisData && currentIndex === 0)
@@ -558,38 +560,13 @@ export default class Home extends Component {
                     renderAmis(aMisData)
                     :
                     renderAmis(MAP[currentIndex || 1], {}, {
-                        fetcher: (api) => {
-                            console.log(999999999, api)
-                            return axios.get(api.url)
-                            .then(res => {
-                                console.log('------', res)
-                                let payload = {
-                                    status: res.status === 200 ? 0 : res.status,
-                                    msg: res.statusText,
-                                    data: {
-                                        items: [res.data]
-                                    }
-                                };
-                                const result = {
-                                    ...res,
-                                    data: payload
-                                }
-                                console.log(78787878, result)
-                                return {
-                                    ...res,
-                                    data: payload
-                                }
-                            })
-                            .catch(err => {
-                                console.log('+++++++', err)
-                            })
-                        }
+                        fetcher: fetcher,
                     })
                 }
-                {
+                {/* {
                     axiosResponse &&
-                    <div style={{width: "300px", height: "300px"}}>{axiosResponse}</div>
-                }
+                    <div style={{width: "100%", height: "300px"}}>{axiosResponse}</div>
+                } */}
             </div>
         )
     }
