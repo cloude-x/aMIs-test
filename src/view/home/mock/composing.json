@@ -2,6 +2,43 @@
     "$schema": "https://houtai.baidu.com/v2/schemas/page.json#",
     "title": "HBox & Grid",
     "type": "page",
+    "aside": {
+        "type": "wrapper",
+        "size": "xs",
+        "className": "",
+        "body": {
+            "type": "nav",
+            "stacked": true,
+            "links": [
+                {
+                    "label": "页面1",
+                    "to": "?paramId=1"
+                },
+                {
+                    "label": "页面2",
+                    "children": [
+                        {
+                            "label": "页面2-1",
+                            "to": "?paramId=2"
+                        },
+                        {
+                            "label": "页面2-2",
+                            "to": "?paramId=2"
+                        },
+                        {
+                            "label": "页面2-3（disabled）",
+                            "disabled": true,
+                            "to": "?paramId=2"
+                        }
+                    ]
+                },
+                {
+                    "label": "页面3",
+                    "to": "?paramId=3"
+                }
+            ]
+        }
+    },
     "body": [
         {
             "type": "plain",

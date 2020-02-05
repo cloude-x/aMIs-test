@@ -38,8 +38,12 @@ export default class Home extends Component {
     }
 
     async componentDidMount() {
-        /* 获取aMis josn配置数据 */
-        await this.getAMisData();
+        if (!this.paramId) {
+            /* 获取aMis josn配置数据 */
+            await this.getAMisData();
+        }
+
+        import('./mock/test').then(res => console.log('|||||||||| code split', res))
 
         /* 获取odoo员工列表 */
         // this.getEmployeeList();
@@ -510,7 +514,8 @@ export default class Home extends Component {
             currentIndex: Number(index),
         }, () => {
             const targetUrl = this.replaceParamVal(window.location.href, 'paramId', this.state.currentIndex);
-            window.history.pushState(null, null, targetUrl);
+            // window.history.pushState(null, null, targetUrl);
+            window.location.href = targetUrl;
         });
     }
 
@@ -542,41 +547,51 @@ export default class Home extends Component {
         //     return <h1>缺少URL参数paramId或者paramId不能为0</h1>;
         // }
 
+        return(
+            <div>
+                {/* <p>home pageId:{currentIndex}</p> */}
+                {/* {
+                    Object.keys(MAP).map((item, index) => {
+                        return <button key={index} onClick={() => this.handleChangeTmp(item)}>点击更换板式{item}</button>
+                    })
+                } */}
+                {/* <button onClick={() => this.addEmployee('13111111117')}>点击新增用户</button>
+                <button onClick={() => this.changeEmployeeInfo({name: '徐晃04', workPhone: '13111111123'})}>点击更改用户信息</button>
+                <button onClick={() => this.removeEmployee(42179)}>点击删除用户</button> */}
 
-        if (aMisData && currentIndex === 0) {
-            return renderAmis(aMisData, {}, {
-                fetcher: fetcher,
-            })
-        } else {
-            return null;
-        }
-        // return(
-        //     <div>
-        //         {/* <p>home pageId:{currentIndex}</p> */}
-        //         {/* {
-        //             Object.keys(MAP).map((item, index) => {
-        //                 return <button key={index} onClick={() => this.handleChangeTmp(item)}>点击更换板式{item}</button>
-        //             })
-        //         } */}
-        //         {/* <button onClick={() => this.addEmployee('13111111117')}>点击新增用户</button>
-        //         <button onClick={() => this.changeEmployeeInfo({name: '徐晃04', workPhone: '13111111123'})}>点击更改用户信息</button>
-        //         <button onClick={() => this.removeEmployee(42179)}>点击删除用户</button> */}
-
-        //         {
-        //             (aMisData && currentIndex === 0)
-        //             ?
-        //             renderAmis(aMisData)
-        //             :
-        //             renderAmis(MAP[currentIndex || 1], {}, {
-        //                 fetcher: fetcher,
-        //             })
-        //         }
-        //         {/* {
-        //             axiosResponse &&
-        //             <div style={{width: "100%", height: "300px"}}>{axiosResponse}</div>
-        //         } */}
-        //     </div>
-        // )
+                {
+                    (!this.paramId && aMisData)
+                    ?
+                    <div data-type="ajax">
+                        {
+                            renderAmis(aMisData, {}, {
+                                fetcher: fetcher,
+                            })
+                        }
+                    </div>
+                    :
+                    <div data-type="normal">
+                    {
+                        renderAmis(MAP[currentIndex || 1], {}, {
+                            fetcher: fetcher,
+                            jumpTo: (e) => {
+                                // 可以不传，用来实现页面跳转
+                                const param = e.substring(e.indexOf("?") + 1).split('=')[1]
+                                console.log('可以不传，用来实现页面跳转', e, param)
+                                if (Number(param) !== this.state.currentIndex) {
+                                    this.handleChangeTmp(param)
+                                }
+                            }
+                        })
+                    }
+                    </div>
+                }
+                {/* {
+                    axiosResponse &&
+                    <div style={{width: "100%", height: "300px"}}>{axiosResponse}</div>
+                } */}
+            </div>
+        )
     }
 }
 

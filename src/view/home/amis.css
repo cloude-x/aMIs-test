@@ -3205,8 +3205,8 @@ td,th {
 
 @font-face {
     font-family: "Glyphicons Halflings";
-    src: url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_f4769f9.eot);
-    src: url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_f4769f9.eot?#iefix) format("embedded-opentype"),url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_448c34a.woff2) format("woff2"),url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_fa27723.woff) format("woff"),url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_e18bbf6.ttf) format("truetype"),url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_8988968.svg#glyphicons_halflingsregular) format("svg")
+    src: url(./glyphicons-halflings-regular_f4769f9.eot);
+    src: url(./glyphicons-halflings-regular_f4769f9.eot?#iefix) format("embedded-opentype"),url(./glyphicons-halflings-regular_448c34a.woff2) format("woff2"),url(./glyphicons-halflings-regular_fa27723.woff) format("woff"),url(./glyphicons-halflings-regular_e18bbf6.ttf) format("truetype"),url(https://bce.bdstatic.com/fex/amis-admin-gh-pages/n/bootstrap/dist/fonts/glyphicons-halflings-regular_8988968.svg#glyphicons_halflingsregular) format("svg")
 }
 
 .glyphicon {

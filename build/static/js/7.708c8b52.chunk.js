@@ -1,0 +1,2 @@
+(this["webpackJsonpamis-test"]=this["webpackJsonpamis-test"]||[]).push([[7],{1408:function(s,t,e){"use strict";e.r(t),e.d(t,"a",(function(){return i}));var i="hello world"}}]);
+//# sourceMappingURL=7.708c8b52.chunk.js.map

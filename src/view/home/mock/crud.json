@@ -2,6 +2,43 @@
     "$schema": "http://amis.baidu.com/v2/schemas/page.json#",
     "title": "增删改查示例",
     "remark": "增删改查示例",
+    "aside": {
+        "type": "wrapper",
+        "size": "xs",
+        "className": "",
+        "body": {
+            "type": "nav",
+            "stacked": true,
+            "links": [
+                {
+                    "label": "页面1",
+                    "to": "?paramId=1"
+                },
+                {
+                    "label": "页面2",
+                    "children": [
+                        {
+                            "label": "页面2-1",
+                            "to": "?paramId=2"
+                        },
+                        {
+                            "label": "页面2-2",
+                            "to": "?paramId=2"
+                        },
+                        {
+                            "label": "页面2-3（disabled）",
+                            "disabled": true,
+                            "to": "?paramId=2"
+                        }
+                    ]
+                },
+                {
+                    "label": "页面3",
+                    "to": "?paramId=3"
+                }
+            ]
+        }
+    },
     "toolbar": [
         {
             "type": "button",

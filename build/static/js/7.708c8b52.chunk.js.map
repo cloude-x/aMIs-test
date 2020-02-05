@@ -1,0 +1,1 @@
+{"version":3,"sources":["view/home/mock/test.js"],"names":["a"],"mappings":"+GAAA,6CAAMA,EAAI","file":"static/js/7.708c8b52.chunk.js","sourcesContent":["const a = 'hello world';\n\nexport { a }"],"sourceRoot":""}
