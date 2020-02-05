@@ -27,6 +27,18 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+#### 简单应用
+
+安装serve
+```
+yarn global add serve
+```
+单页形式运行build
+```
+serve -s build
+```
+访问：http://localhost:5000
+
 ### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
